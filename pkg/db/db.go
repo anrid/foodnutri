@@ -72,12 +72,7 @@ func NewFoodDB() *FoodDB {
 	ReadZippedCSV(SupportingDataZippedCSV, db.ReadCSVRecord)
 	ReadZippedCSV(FoundationFoodZippedCSV, db.ReadCSVRecord)
 
-	// Dump(db.Foods["1750347"])
-
-	newDB := db.NewDBWithUniqueFoodNamesAndAverageNutritionalValues()
-	newDB.NutrientTopList("Cholesterol")
-
-	return db
+	return db.NewDBWithUniqueFoodNamesAndAverageNutritionalValues()
 }
 
 func (db *FoodDB) NewDBWithUniqueFoodNamesAndAverageNutritionalValues() *FoodDB {
@@ -149,7 +144,7 @@ func (db *FoodDB) NutrientTopList(nut string) {
 		}
 	}
 
-	fmt.Printf("\nTop foods by nutrient '%s'\n\n", nut)
+	fmt.Printf("\nTop foods by nutrient '%s' (amount of the nutrient per 100g of food):\n\n", nut)
 
 	sort.SliceStable(unsorted, func(i, j int) bool {
 		return unsorted[i].N.Amount > unsorted[j].N.Amount
