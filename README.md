@@ -1,2 +1,2 @@
-# foodnutri
-List foods by contents of a specific nutrient, e.g. Cholesterol.
+# Food Nutri
+List top foods by nutrient content, e.g. Cholesterol.
